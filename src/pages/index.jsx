@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 import ReactSEOMetaTags from "react-seo-meta-tags";
 import favicon from '../images/favicon.svg';
 import metaimg from '../images/image.png';
+import gatsbyConfig from "../../gatsby-config";
 
 const subrc = `
 ~	IN	CNAME	r.forwarddomain.net
@@ -61,7 +62,7 @@ const IndexPage = () => {
           title: 'ForwardDomain.net',
           language: 'en-US',
           description: 'Forward domains completely free and trackers-free using 301 HTTP redirects.',
-          image: metaimg,
+          image: gatsbyConfig.siteMetadata.siteUrl + metaimg,
           author: {
             email: 'willnode@wellosoft.net',
             name: 'Wildan M',
