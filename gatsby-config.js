@@ -1,8 +1,8 @@
 module.exports = {
     siteMetadata: {
-        siteUrl: `https://www.yourdomain.tld`,
+        siteUrl: `https://forwarddomain.net`,
     },
     plugins: [
-
+        `gatsby-plugin-react-helmet`
     ]
 }
