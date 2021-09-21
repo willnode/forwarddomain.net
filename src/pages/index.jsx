@@ -1,56 +1,12 @@
-import { Box, ChakraProvider, Heading, Input, Link, Textarea } from "@chakra-ui/react";
 import * as React from "react";
-import psl from 'psl';
-import { fixDomain, fixSource } from "../utils/parser";
+import { Box, ChakraProvider, Heading, Link } from "@chakra-ui/react";
 import { Helmet } from "react-helmet";
 import ReactSEOMetaTags from "react-seo-meta-tags";
 import favicon from '../images/favicon.svg';
 import metaimg from '../images/image.png';
 import gatsbyConfig from "../../gatsby-config";
+import Content from "../components/Content";
 
-const subrc = `
-~	IN	CNAME	r.forwarddomain.net
-~	IN	TXT	forward-domain=https://$/*
-~	IN	TXT	forward-domain-cert-maintainer=@
-`
-const apexrc = `
-~	IN	A	206.189.61.89
-~	IN	AAAA	2a03:b0c0:3:d0::13a8:c001
-~	IN	TXT	forward-domain=$
-~	IN	TXT	forward-domain-cert-maintainer=@
-`
-
-const Content = () => {
-  const [domain, setDomain] = React.useState('');
-  const [source, setSource] = React.useState('');
-  const [email, setEmail] = React.useState('');
-  const normalizedSource = React.useMemo(() => {
-    return fixSource(source);
-  }, [domain, email, source]);
-  const generatedRecord = React.useMemo(() => {
-    let r = psl.parse(normalizedSource).subdomain ? subrc : apexrc;
-    return r.replace(/\$/g, fixDomain(domain))
-      .replace(/\@/g, email || '<Your email here>')
-      .replace(/\~/g, normalizedSource)
-  }, [domain, email, source]);
-  return <Box py={3}>
-    <Input my={1} value={domain} textAlign="center" onChange={(e) => setDomain(e.target.value)}
-      placeholder="To where the domain forwards to?" />
-    <Input my={1} value={source} textAlign="center" onChange={(e) => setSource(e.target.value)}
-      placeholder="From where the domain is placed?" />
-    <Input my={1} value={email} autoComplete="email" textAlign="center" onChange={(e) => setEmail(e.target.value)}
-      placeholder="Which email that owns or maintenance this domain?" />
-    <Box my={5}>
-      Then put these DNS records on <b>{normalizedSource === '@' ? '<your-source-domain>' : normalizedSource}</b>:
-    </Box>
-    <Textarea readOnly value={generatedRecord} rows="6" />
-    <Box my={5}>
-      {normalizedSource !== '@' && <Link target="_blank" href={`https://dns.google/query?name=${normalizedSource}`}>
-        After putting these records, Check if Google DNS resolver has got your new records.
-      </Link>}
-    </Box>
-  </Box>
-}
 // markup
 const IndexPage = () => {
   return (

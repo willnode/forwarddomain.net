@@ -2,7 +2,7 @@ var parse = require('url-parse')
 
 export const fixDomain = (d) => {
     try {
-        if (!d) throw null;
+        if (!d) throw new Error();
         if (!d.includes('//')) d = 'https://' + d;
         var u = parse(d, {});
         if (u.pathname.endsWith('/'))
@@ -14,7 +14,7 @@ export const fixDomain = (d) => {
 }
 export const fixSource = (d) => {
     try {
-        if (!d) throw null;
+        if (!d) throw new Error();
         if (!d.includes('//')) d = 'http://' + d;
         var u = parse(d, {});
         u.protocol = '';
