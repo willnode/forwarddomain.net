@@ -1,0 +1,58 @@
+import { Code, Heading, List, ListItem, Text, UnorderedList } from '@chakra-ui/layout';
+import * as React from 'react';
+import GitHubButton from 'react-github-btn';
+
+const Readme = () => {
+    return (
+        <div className="readme">
+            <Heading as="h2">FAQ</Heading>
+            <Text>This services forwards domains using 301 HTTP(s) redirects.</Text>
+            <Text>Besides it's free, it's also open source so you can see it's free of tracking or if you want to fork this service to your own server.</Text>
+<GitHubButton href="https://github.com/willnode/forward-domain" data-size="large" data-show-count="true" aria-label="Star willnode/forward-domain on GitHub">Check our GitHub page</GitHubButton>
+            <Heading as="h3">Possible scenarios:</Heading>
+            <UnorderedList>
+                <ListItem>Forward non-www to www URLs or inversely</ListItem>
+                <ListItem>Forward old URLs to new URLs</ListItem>
+            </UnorderedList>
+            <Heading as="h3">Why use this service?</Heading>
+            <UnorderedList>
+                <ListItem>No coding required</ListItem>
+                <ListItem>No hosting required</ListItem>
+                <ListItem>No registration required</ListItem>
+                <ListItem>Completely anonymous</ListItem>
+                <ListItem>Completely free</ListItem>
+            </UnorderedList>
+            <Heading as="h3">How it is possible?</Heading>
+            <UnorderedList>
+                <ListItem>Point your domain to us using CNAME or A/AAAA records</ListItem>
+                <ListItem>Tell us where to forward using TXT records</ListItem>
+                <ListItem>We handle HTTPS certificates for you</ListItem>
+            </UnorderedList>
+            <Heading as="h3">Is it really free?</Heading>
+            <h3></h3>
+            <Text>Forwarding domains should be easy to set up.<br />
+                I use this internally for <a href="https://domcloud.io" rel="nofollow">domcloud.io</a>.<br /></Text>
+            <Heading as="h3">How can I check redirects will work?</Heading>
+            <Text>This service uses Google's <a href="https://dns.google" rel="nofollow">Public DNS Resolver</a>.<br />
+                Once first accessed, values will be cached for a day.<br />
+                For right now there's no way to flush the cache sorry.</Text>
+            <Heading as="h3">Why does it load slowly?</Heading>
+            <Text>It is only being slow the first time because it has to sign HTTPS certificates.</Text>
+            <Heading as="h3">How can I support this service?</Heading>
+            <Text>Star our repo and spread the word, please :)</Text>
+            <Text>Additionally, you can also help us cover hosting costs.</Text>
+            <a href="https://www.buymeacoffee.com/willnode" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" /></a>
+            <Heading>Usual Disclaimer</Heading>
+            <Text fontStyle="italic">THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+                SOFTWARE.
+            </Text>
+        </div>
+    );
+}
+
+export default Readme;

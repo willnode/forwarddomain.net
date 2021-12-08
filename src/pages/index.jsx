@@ -6,6 +6,7 @@ import favicon from '../images/favicon.svg';
 import metaimg from '../images/image.png';
 import gatsbyConfig from "../../gatsby-config";
 import Content from "../components/Content";
+import Readme from "../components/Readme";
 
 // markup
 const IndexPage = () => {
@@ -17,7 +18,7 @@ const IndexPage = () => {
           url: 'https://forwarddomain.net',
           title: 'ForwardDomain.net',
           language: 'en-US',
-          description: 'Forward domains completely free and trackers-free using 301 HTTP redirects.',
+          description: 'Completely Free Domain Forwarding Service using 301 HTTP redirects. Without trackers or any hidden costs.',
           image: gatsbyConfig.siteMetadata.siteUrl + metaimg,
           author: {
             email: 'willnode@wellosoft.net',
@@ -30,16 +31,11 @@ const IndexPage = () => {
           <Heading as="h1" my={5}>
             ForwardDomain.net 📦
           </Heading>
-          <Box my={5}>Forward domains completely free and trackers-free using 301 HTTP redirects.</Box>
+          <Box my={5}>Completely Free Domain Forwarding Service using 301 HTTP redirects. Without trackers or any hidden costs.</Box>
         </Box>
 
-        <Box><small>(a beta service)</small></Box>
         <Content />
-        <Box my={5}>
-          <Link href="https://github.com/willnode/forward-domain#readme">
-            Check our GitHub for explanations
-          </Link>
-        </Box>
+        <Readme />
         <Box my={5}>
           Proudly created by <Link href="https://github.com/willnode">Wildan M</Link> 🔥
         </Box>

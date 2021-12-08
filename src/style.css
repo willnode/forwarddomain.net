@@ -1,1 +1,11 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css);
+
+.readme > * {
+    margin-bottom: 0.5em;
+}
+.readme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
