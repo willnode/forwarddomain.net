@@ -8,7 +8,7 @@ const Readme = () => {
             <Heading as="h2">FAQ</Heading>
             <Text>This services forwards domains using 301 HTTP(s) redirects.</Text>
             <Text>Besides it's free, it's also open source so you can see it's free of tracking or if you want to fork this service to your own server.</Text>
-<GitHubButton href="https://github.com/willnode/forward-domain" data-size="large" data-show-count="true" aria-label="Star willnode/forward-domain on GitHub">Check our GitHub page</GitHubButton>
+            <GitHubButton href="https://github.com/willnode/forward-domain" data-size="large" data-show-count="true" aria-label="Star willnode/forward-domain on GitHub">Check our GitHub page</GitHubButton>
             <Heading as="h3">Possible scenarios:</Heading>
             <UnorderedList>
                 <ListItem>Forward non-www to www URLs or inversely</ListItem>
@@ -29,23 +29,25 @@ const Readme = () => {
                 <ListItem>We handle HTTPS certificates for you</ListItem>
             </UnorderedList>
             <Heading as="h3">Is it really free?</Heading>
-            <Text style={{maxWidth: 600}}>Forwarding domains should be easy to set up.
+            <Text style={{ maxWidth: 600 }}>Forwarding domains should be easy to set up.
                 I use this myself for <a href="https://domcloud.io" target="_blank" rel="noreferrer">domcloud.io</a>.</Text>
             <Heading as="h3">How can I check redirects will work?</Heading>
-            <Text style={{maxWidth: 600}}>This service uses Google's <a href="https://dns.google" rel="nofollow">Public DNS Resolver</a>.
+            <Text style={{ maxWidth: 600 }}>This service uses Google's <a href="https://dns.google" rel="nofollow">Public DNS Resolver</a>.
                 Once first accessed, values will be cached for a day.
                 For right now there's no way to flush the cache sorry.</Text>
             <Heading as="h3">Why does it load slowly?</Heading>
             <Text>It is only being slow the first time because it has to sign HTTPS certificates.</Text>
             <Heading as="h3">How about IPv6?</Heading>
-            <Text style={{maxWidth: 600}}>IPv6 record is added in <Code>r.forwarddomain.net</Code> so subdomain redirects will simply work with IPv6. We don't guarantee that its IPv6 address will be persistent though. See <a href="https://github.com/willnode/forward-domain/issues/2#issuecomment-1003831835" target="_blank" rel="noreferrer">#2</a> for apex domains setup.</Text>
+            <Text style={{ maxWidth: 600 }}>IPv6 record is added in <Code>r.forwarddomain.net</Code> so subdomain redirects will simply work with IPv6. We don't guarantee that its IPv6 address will be persistent though. See <a href="https://github.com/willnode/forward-domain/issues/2#issuecomment-1003831835" target="_blank" rel="noreferrer">#2</a> for apex domains setup.</Text>
             <Heading as="h3">What records do we keep?</Heading>
-            <Text style={{maxWidth: 600}}>
-We only keep caches of DNS records and SSL certs. This also means we can see how many users and what domains are using our service from the software cache, but that's all. We don't keep log traffic nor keep any user data anywhere on our server.</Text>
+            <Text style={{ maxWidth: 600 }}>
+                We only keep caches of DNS records and SSL certs. This also means we can see how many users and what domains are using our service from the software cache, but that's all. We don't keep log traffic nor keep any user data anywhere on our server.</Text>
             <Heading as="h3">How can I support this service?</Heading>
             <Text>Star our repo and spread the word, please :)</Text>
             <Text>Additionally, you can also help us cover hosting costs.</Text>
-            <a href="https://www.buymeacoffee.com/willnode" target="_blank"  rel="noreferrer"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" /></a>
+            <p>
+                <a href='https://ko-fi.com/willnode' target='_blank' rel="noreferrer"><img src='https://ko-fi.com/img/githubbutton_sm.svg' alt='Support me at ko-fi.com' /></a>
+            </p>
             <Heading>Usual Disclaimer</Heading>
             <Text fontStyle="italic">THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
                 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
