@@ -42,6 +42,10 @@ const Readme = () => {
             <Heading as="h3">What records do we keep?</Heading>
             <Text style={{ maxWidth: 600 }}>
                 We only keep caches of DNS records and SSL certs. This also means we can see how many users and what domains are using our service from the software cache, but that's all. We don't keep log traffic nor keep any user data anywhere on our server.</Text>
+            <Heading as="h3">Can you guarantee the uptime?</Heading>
+            <Text style={{ maxWidth: 600 }}>
+                We aimed to keep this service available at best. But as this is a free service, there's no guarantee.
+                You can check our <a href="https://stats.uptimerobot.com/AA77Xt9Jx8" target="_blank" rel="noreferrer">status page</a> if you wanted to.</Text>
             <Heading as="h3">How can I support this service?</Heading>
             <Text>Star our repo and spread the word, please :)</Text>
             <Text>Additionally, you can also help us cover hosting costs.</Text>
