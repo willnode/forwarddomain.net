@@ -10,7 +10,7 @@ import Readme from "../components/Readme";
 
 // markup
 const IndexPage = () => {
-    const page = new URLSearchParams(window.location.search).get('d');
+    const page = new URLSearchParams(window ? window.location.search : '').get('d');
     return (
         <ChakraProvider>
             <ReactSEOMetaTags
