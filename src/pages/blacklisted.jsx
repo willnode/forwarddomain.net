@@ -7,10 +7,15 @@ import metaimg from '../images/image.png';
 import gatsbyConfig from "../../gatsby-config";
 import Content from "../components/Content";
 import Readme from "../components/Readme";
+import { useState } from "react";
+
+const isBrowser = typeof window !== "undefined"
 
 // markup
 const IndexPage = () => {
-    const page = new URLSearchParams(window ? window.location.search : '').get('d');
+    const [page, setPage] = useState(() => {
+        return new URLSearchParams(isBrowser ? window.location.search : '').get('d')
+    });
     return (
         <ChakraProvider>
             <ReactSEOMetaTags
