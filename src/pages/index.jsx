@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, ChakraProvider, Heading, Link } from "@chakra-ui/react";
+import { Box, ChakraProvider, Heading, Link, Text } from "@chakra-ui/react";
 import { Helmet } from "react-helmet";
 import ReactSEOMetaTags from "react-seo-meta-tags";
 import favicon from '../images/favicon.svg';
@@ -7,9 +7,17 @@ import metaimg from '../images/image.png';
 import gatsbyConfig from "../../gatsby-config";
 import Content from "../components/Content";
 import Readme from "../components/Readme";
+import { useEffect } from "react";
 
 // markup
 const IndexPage = () => {
+  const [stat, setStat] = React.useState(null);
+  useEffect(() => {
+    fetch("https://s.forwarddomain.net")
+      .then(res => res.json())
+      .then(setStat)
+      .catch(err => console.error(err));
+  }, []);
   return (
     <ChakraProvider>
       <ReactSEOMetaTags
@@ -18,7 +26,7 @@ const IndexPage = () => {
           url: 'https://forwarddomain.net',
           title: 'ForwardDomain.net',
           language: 'en-US',
-          description: 'Completely Free Domain Forwarding Service using 301 HTTP redirects. Without trackers or any hidden costs.',
+          description: 'Domain Forwarding Service using DNS. 100% free. No trackers.',
           image: gatsbyConfig.siteMetadata.siteUrl + metaimg,
           author: {
             email: 'willnode@wellosoft.net',
@@ -26,12 +34,15 @@ const IndexPage = () => {
           },
         }}
       />
-      <Box as="main" p={5} textAlign="center" maxWidth="1000px" mx="auto">
+      <Box as="main" px={10} py={5} textAlign="center" maxWidth="1000px" mx="auto">
         <Box>
           <Heading as="h1" my={5}>
             ForwardDomain.net 📦
           </Heading>
-          <Box my={5}>Completely Free Domain Forwarding Service using 301 HTTP redirects. Without trackers or any hidden costs.</Box>
+          <Box my={5}>Domain Forwarding Service using DNS. <Text as="span" color="blue.800">100% free. No trackers.</Text></Box>
+          <Text my={5} color="blue.800" fontSize={"2xl"}>
+            {stat ? <b>{stat.domains}</b> : '...'} websites served 🔥
+          </Text>
         </Box>
 
         <Content />

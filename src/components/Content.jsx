@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Input, Link, Textarea } from "@chakra-ui/react";
+import { Box, Input, Textarea } from "@chakra-ui/react";
 import psl from 'psl';
 import { fixDomain, fixSource } from "../utils/parser";
 
@@ -33,9 +33,12 @@ const Content = () => {
         </Box>
         <Textarea readOnly fontFamily="monospace" value={generatedRecord} rows={6} />
         <Box my={5}>
-            {normalizedSource !== '@' && <Link target="_blank" href={`https://dns.google/query?name=${normalizedSource}`}>
-                After putting these records, Check if Google DNS resolver has got your new records.
-            </Link>}
+            {normalizedSource !== '@' && <span>
+                After putting these records,&nbsp;
+                <a target="_blank" href={`https://dns.google/query?name=${normalizedSource}`}>
+                    Check if Google DNS resolver has got your new records.
+                </a>
+            </span>}
         </Box>
     </Box>
 }
