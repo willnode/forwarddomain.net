@@ -11,13 +11,14 @@
 }
 
 a {
-    color: #0066cc;
-    text-decoration: none;
+    color: black;
+    text-decoration: underline !important;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #0066cc;
 }
+
 
 h3 {
     margin-top: 0.5em;

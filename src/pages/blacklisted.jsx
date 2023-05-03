@@ -1,19 +1,17 @@
 import * as React from "react";
-import { background, Box, ChakraProvider, Heading, Link } from "@chakra-ui/react";
+import { Box, ChakraProvider, Heading } from "@chakra-ui/react";
 import { Helmet } from "react-helmet";
 import ReactSEOMetaTags from "react-seo-meta-tags";
 import favicon from '../images/favicon.svg';
 import metaimg from '../images/image.png';
 import gatsbyConfig from "../../gatsby-config";
-import Content from "../components/Content";
-import Readme from "../components/Readme";
 import { useState } from "react";
 
 const isBrowser = typeof window !== "undefined"
 
 // markup
 const IndexPage = () => {
-    const [page, setPage] = useState(() => {
+    const [page, ] = useState(() => {
         return new URLSearchParams(isBrowser ? window.location.search : '').get('d')
     });
     return (

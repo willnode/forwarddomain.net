@@ -6,8 +6,8 @@ const Readme = () => {
     return (
         <div className="readme">
             <Heading as="h2">FAQ</Heading>
-            <Text>This services forwards domains using DNS only with 301 HTTP Redirects.</Text>
-            <Text>Besides it's free, it's also open source so you can see it's free of tracking or if you want to fork this service to your own server.</Text>
+            <Text>This services forwards domains using DNS only with HTTP(s) Redirects.</Text>
+            <Text>It's 100% free and open source so you can see it's free of tracking or if you want to fork this service to your own server.</Text>
             <Box my={5}>
                 <GitHubButton href="https://github.com/willnode/forward-domain" data-size="large" data-show-count="true" aria-label="Star willnode/forward-domain on GitHub">&nbsp;Visit willnode/forward-domain</GitHubButton>
             </Box>
@@ -42,18 +42,20 @@ const Readme = () => {
             <Text>It is only being slow the first time because it has to sign HTTPS certificates.</Text>
             <Heading as="h3">How about IPv6?</Heading>
             <Text style={{ maxWidth: 600 }}>IPv6 record is added in <Code>r.forwarddomain.net</Code> so subdomain redirects will simply work with IPv6. We don't guarantee that its IPv6 address will be persistent though. See <a href="https://github.com/willnode/forward-domain/issues/2#issuecomment-1003831835" target="_blank" rel="noreferrer">#2</a> for apex domains setup.</Text>
+            <Heading as="h3">How about custom HTTP status code?</Heading>
+            <Text style={{ maxWidth: 600 }}>HTTP status can be customized using <Code>http-status=</Code> option. By default it's 301, which is a permanent redirection. You can set it to 302 for a temporary redirection. This matters for search engines.</Text>
             <Heading as="h3">What records do we keep?</Heading>
             <Text style={{ maxWidth: 600 }}>
-                We only keep caches of DNS records and SSL certs. This also means we can see how many users and what domains are using our service from the software cache, but that's all. We don't keep log traffic nor keep any user data anywhere on our server.</Text>
+                We only keep caches of DNS records and HTTPS certificates. This also means we can see how many users and what domains are using our service from this cache, but that's all. We don't keep log traffic nor any visitor data anywhere on our server.</Text>
             <Heading as="h3">Can you guarantee the uptime?</Heading>
             <Text style={{ maxWidth: 600 }}>
-                We aimed to keep this service available at best. But as this is a free service, there's no guarantee.
+                We keep this service available at best. But as this is a free service, there's no guarantee.
                 You can check our <a href="https://stats.uptimerobot.com/AA77Xt9Jx8" target="_blank" rel="noreferrer">status page 🚦</a> if you wanted to.</Text>
             <Heading as="h3">How can I support this service?</Heading>
             <Text>Star our repo and spread the word, please :)</Text>
             <Text>Additionally, you can also <a href="https://github.com/sponsors/willnode">help us cover hosting costs 💸</a>.</Text>
-            <Heading>Usual Disclaimer</Heading>
-            <Text fontStyle="italic">THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            <Heading>Disclaimer</Heading>
+            <Text fontStyle="italic" textAlign="justify" maxWidth={560}>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
                 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
                 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
                 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
