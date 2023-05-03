@@ -16,7 +16,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: ./package-lock.json
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm ci
       - name: Build web
         run: CI=false npm run build
       - name: Add CNAME
