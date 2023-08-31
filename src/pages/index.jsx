@@ -21,7 +21,10 @@ const IndexPage = () => {
   return (
     <ChakraProvider>
       <ReactSEOMetaTags
-        render={(el) => <Helmet>{el}<link rel="icon" href={favicon} /></Helmet>}
+        render={(el) => <Helmet>{el}
+          <link rel="icon" href={favicon} />
+          <link rel="canonical" href='https://forwarddomain.net' />
+        </Helmet>}
         website={{
           url: 'https://forwarddomain.net',
           title: 'ForwardDomain.net',
