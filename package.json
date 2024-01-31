@@ -8,7 +8,9 @@
     "node": ">=18.0.0"
   },
   "keywords": [
-    "forward", "domain", "net"
+    "forward",
+    "domain",
+    "net"
   ],
   "scripts": {
     "develop": "gatsby develop",
@@ -19,15 +21,15 @@
   },
   "license": "0BSD",
   "dependencies": {
-    "@chakra-ui/react": "^2.6.0",
-    "gatsby": "^5.9.0",
-    "gatsby-plugin-react-helmet": "^6.9.0",
+    "@chakra-ui/react": "^2.8.2",
+    "gatsby": "^5.13.3",
+    "gatsby-plugin-react-helmet": "^6.13.1",
     "psl": "^1.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-github-btn": "^1.4.0",
     "react-helmet": "^6.1.0",
-    "react-seo-meta-tags": "^1.3.0",
+    "react-seo-meta-tags": "^1.3.1",
     "url-parse": "^1.5.10"
   }
 }
