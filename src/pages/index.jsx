@@ -13,7 +13,7 @@ import { useEffect } from "react";
 const IndexPage = () => {
   const [stat, setStat] = React.useState(null);
   useEffect(() => {
-    fetch("https://s.forwarddomain.net")
+    fetch("https://r.forwarddomain.net/stat")
       .then(res => res.json())
       .then(setStat)
       .catch(err => console.error(err));
