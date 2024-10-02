@@ -10,6 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
+        run: corepack enable
+      - name: Build web
         run: yarn build
       - name: Add CNAME
         run: echo forwarddomain.net > ./public/CNAME

@@ -39,9 +39,9 @@ const Content = () => {
         <Box my={5}>
             {!parsedSource.error && <span>
                 After entering these records,&nbsp;
-                <a target="_blank" rel="noreferrer" href={`https://dns.google/query?name=${parsedSource.input}`}>
-                    Check if Google DNS resolver has got your new records.
-                </a>
+                👉 <a target="_blank" rel="noreferrer" href={`/check?domain=${parsedSource.input}`}>
+                   Check if you have entered these records correctly!
+                </a> 👈
             </span>}
         </Box>
     </Box>
