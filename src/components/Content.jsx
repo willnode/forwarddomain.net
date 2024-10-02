@@ -9,8 +9,8 @@ const apexrc = `~.	IN	A	167.172.5.31
 ~.	IN	AAAA	2400:6180:0:d0::e08:a001
 `
 
-const permrc = `_.~.	IN	TXT	forward-domain=$`
-const temprc = `_.~.	IN	TXT	http-status=302;forward-domain=$`
+const permrc = `fwd.~.	IN	TXT	forward-domain=$`
+const temprc = `fwd.~.	IN	TXT	http-status=302;forward-domain=$`
 
 const Content = () => {
     const [domain, setDomain] = React.useState('');
@@ -24,7 +24,7 @@ const Content = () => {
         let r = parsedSource.subdomain ? subrc : apexrc;
         return (r + t).replace(/\$/g, fixDomain(domain))
             .replace(/~/g, parsedSource.input)
-    }, [domain, source, is301]);
+    }, [domain, is301, parsedSource.input, parsedSource.subdomain]);
     return <Box py={3}>
         <Input my={1} value={source} textAlign="center" onChange={(e) => setSource(e.target.value)}
             placeholder="From where the domain is placed?" />
