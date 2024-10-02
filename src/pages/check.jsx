@@ -25,9 +25,13 @@ const IndexPage = () => {
         var txt2 = await (await fetch(`https://dns.google/resolve?name=fwd.${dom}&type=TXT`)).json();
         var a = await (await fetch(`https://dns.google/resolve?name=${dom}&type=A`)).json();
         const txt = txt1.Answer?.[0]?.data || txt2.Answer?.[0]?.data || '';
-        const ip = a.Answer?.find(x => (x?.data + '').match(/[\d.]+/))?.data;
-        console.log(txt, ip);
-        setDnsState({ dom, txt, ip, txtPrefix: txt2.Answer?.[0]?.data == txt ? 'fwd.' : '_.' });
+        const ip = a.Answer?.find(x => (x?.data + '').match(/^[\d.]+$/))?.data;
+        const dnsstate = {
+            dom, txt, ip, txtPrefix: txt2.Answer?.[0]?.data == txt ? 'fwd.' : '_.',
+            raw: { txt1, txt2, a }
+        }
+        console.log(dnsstate);
+        setDnsState(dnsstate);
     }
     return (
         <ChakraProvider>
