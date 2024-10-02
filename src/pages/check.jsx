@@ -6,9 +6,11 @@ import favicon from '../images/favicon.svg';
 import metaimg from '../images/image.png';
 import gatsbyConfig from "../../gatsby-config";
 
+const isBrowser = typeof window !== "undefined"
+
 // markup
 const IndexPage = () => {
-    const [domain, setDomain] = React.useState(window ? new URL(window.location.href).searchParams.get('domain') || '' : '');
+    const [domain, setDomain] = React.useState(isBrowser ? new URL(window.location.href).searchParams.get('domain') || '' : '');
     const [dnsState, setDnsState] = React.useState(null);
 
     React.useEffect(() => {
